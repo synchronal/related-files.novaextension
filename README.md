@@ -1,3 +1,5 @@
+<!-- @related [changelog](CHANGELOG.md) [license](LICENSE) -->
+
 **Open Related File…** opens a file related to the current file.
 
 It's common for code editors to have a built-in or extension-provided feature to switch between

@@ -87,4 +87,4 @@ Contributions are welcome. `Scripts/related.js` comes from
 
 ## License, Copyright, Attributions
 
-Copyright 2023 Erik Hanson. See [LICENSE](https://github.com/synchronal/related-files.novaextension/blob/main/LICENSE)).
+Copyright 2023 Erik Hanson. See [LICENSE](https://github.com/synchronal/related-files.novaextension/blob/main/LICENSE).

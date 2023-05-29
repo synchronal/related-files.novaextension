@@ -52,7 +52,7 @@ you choose the file to open.
 Contributions are welcome. `Scripts/related.js` comes from
 [synchronal/related-files](https://github.com/synchronal/related-files).
 
-## Nova extensions I’ve written
+## Other Nova extensions you might like :)
 
 - **Document Sections** lets you jump around to various sections in a text document using a customizable marker
   (typically a code comment in a certain format).

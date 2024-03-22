@@ -14,8 +14,6 @@ nova.commands.register("related-files.open-related-file", (editor) => {
   const contents = doc.getTextInRange(new Range(0, doc.length));
   const files = related(contents, config);
 
-  console.log(`files: ${JSON.stringify(files)}`)
-
   if (files.length == 0) {
     return;
   } else if (files.length == 1) {
@@ -38,7 +36,6 @@ function openFile(file) {
 
 function readConfig() {
   const configFilePath = nova.path.join(nova.workspace.path, "/.config/related-files.json");
-  console.log(`configFilePath: ${configFilePath}`);
   if (nova.fs.stat(configFilePath)) {
     const configFile = nova.fs.open(configFilePath);
     const configFileContents = configFile.read();

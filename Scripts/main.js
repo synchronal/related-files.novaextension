@@ -1,17 +1,20 @@
+// @related [related.js](/Scripts/related.js)
+
 const { related } = require("related.js");
 
 exports.activate = function () {
-  // Do work when the extension is activated
+  config = readConfig();
 };
 
 exports.deactivate = function () {
-  // Clean up state before the extension is deactivated
 };
 
 nova.commands.register("related-files.open-related-file", (editor) => {
   const doc = editor.document;
   const contents = doc.getTextInRange(new Range(0, doc.length));
-  const files = related(contents);
+  const files = related(contents, config);
+
+  console.log(`files: ${JSON.stringify(files)}`)
 
   if (files.length == 0) {
     return;
@@ -30,5 +33,17 @@ function openFile(file) {
     const relativePath = file.path;
     const path = nova.path.join(nova.workspace.path, relativePath).trim();
     nova.workspace.openFile(path);
+  }
+}
+
+function readConfig() {
+  const configFilePath = nova.path.join(nova.workspace.path, "/.config/related-files.json");
+  console.log(`configFilePath: ${configFilePath}`);
+  if (nova.fs.stat(configFilePath)) {
+    const configFile = nova.fs.open(configFilePath);
+    const configFileContents = configFile.read();
+    return JSON.parse(configFileContents);
+  } else {
+    return {};
   }
 }

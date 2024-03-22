@@ -1,3 +1,7 @@
+## Version 1.1.0
+
+Add support for a config file in `.config/related-files.json` that can specify a `projectRoot`.
+
 ## Version 1.0.2
 
 Update documentation.
